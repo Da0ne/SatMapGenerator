@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JCEA43qAE4uBBjQK9Ucwe6xI8rwwcrE5V+ttJW2s2EPXJS4nyj4FEnz6PXyrWcluoMyCMoBlyOaUFWZ55LkLyA==",
+  "success": true,
+  "projectFilePath": "P:\\VisualStudio_Projects\\ImageStitcher\\ImageStitcher\\ImageStitcher.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DaOne\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\DaOne\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
