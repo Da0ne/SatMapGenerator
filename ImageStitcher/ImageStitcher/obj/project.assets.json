@@ -128,11 +128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "P:\\VisualStudio_Projects\\ImageStitcher\\ImageStitcher\\ImageStitcher.csproj",
+      "projectUniqueName": "P:\\SatMapGenerator\\ImageStitcher\\ImageStitcher\\ImageStitcher.csproj",
       "projectName": "ImageStitcher",
-      "projectPath": "P:\\VisualStudio_Projects\\ImageStitcher\\ImageStitcher\\ImageStitcher.csproj",
+      "projectPath": "P:\\SatMapGenerator\\ImageStitcher\\ImageStitcher\\ImageStitcher.csproj",
       "packagesPath": "C:\\Users\\DaOne\\.nuget\\packages\\",
-      "outputPath": "P:\\VisualStudio_Projects\\ImageStitcher\\ImageStitcher\\obj\\",
+      "outputPath": "P:\\SatMapGenerator\\ImageStitcher\\ImageStitcher\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\DaOne\\AppData\\Roaming\\NuGet\\NuGet.Config",

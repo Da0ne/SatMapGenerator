@@ -1,10 +1,24 @@
-﻿using System.Drawing;
+﻿using ImageStitcher;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.Reflection;
 
-Console.WriteLine("\t\t[[Make sure your PNGs are 256x256]]\n\n");
+
+string[] maps = {"Chernarus (#1)", "Livonia (#2)", "Namalsk (#3)", "default-any (#4)"};
+for (int i = 0; i < maps.Count(); i++)
+{
+    Console.WriteLine(maps[i]);
+}
+
+int number;
+do
+{
+    Console.WriteLine("\nSelect map # from above: ");
+} while (!int.TryParse(Console.ReadLine(), out number) || number <= 0 || number > maps.Count());
+
 DirectoryInfo directory = new DirectoryInfo(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 Console.WriteLine("Searching in...." + directory.FullName);
+
 if (directory != null)
 {
     FileInfo[] files = directory.GetFiles();
@@ -30,6 +44,13 @@ if (directory != null)
 
         Console.WriteLine("Processing ►►►► " + file.Name);
         Image img = Image.FromFile(file.FullName);
+
+        Size size = img.Size;
+        if (size.Width != 256 || size.Height != 256)
+        {
+            img = (Image)(new Bitmap(img, new Size(266, 266)));
+        }
+
         if (idxW == 32) //32x32 tiled map (1024 paa's for the sat map)
         {
             idxW = 0;
@@ -42,9 +63,24 @@ if (directory != null)
         }
         else
         {
-            //Map tile image must be converted to 256x256
-            //Livonia,Chernarus  offset: (has 16 pixels (256 - 16 = 240))
-            g.DrawImage(img, new Point((240 * idxH), (240 * idxW)));
+            switch(number)
+            {
+                //Chernarus + Livonia
+                case 1:
+                case 2:
+                    g.DrawImage(img, new Point(((int)PixelOffsets.Chernarus_Livonia * idxH), ((int)PixelOffsets.Chernarus_Livonia * idxW)));
+                    break;
+
+                //Namalsk
+                case 3:
+                    g.DrawImage(img, new Point(((int)PixelOffsets.Namalsk * idxH), ((int)PixelOffsets.Namalsk * idxW)));
+                    break;
+
+                //default any
+                case 4:
+                    g.DrawImage(img, new Point(((int)PixelOffsets.Default * idxH), ((int)PixelOffsets.Default * idxW)));
+                    break;
+            }
         }
         idxW++;
         i++;
