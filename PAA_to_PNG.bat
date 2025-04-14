@@ -6,7 +6,7 @@ for /F "Tokens=2* skip=2" %%A In ('REG QUERY "HKEY_CURRENT_USER\SOFTWARE\Bohemia
 setlocal enabledelayedexpansion
 for %%f in (%CD%\*.paa) do (
   set /p val=<%%f
-  start "convert to PAA PNG" /B "%ImageToPAAPath%" -size=256 %%f %CD%\%%~nf.png
+  start "convert to PAA PNG" /B "%ImageToPAAPath%" %%f %CD%\%%~nf.png
 )
 
 
